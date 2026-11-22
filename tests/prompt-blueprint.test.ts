@@ -1,0 +1,11 @@
+import {readFileSync} from 'node:fs';
+import {it,expect} from 'vitest';
+import {builtin} from '@/lib/solutions';
+import {compileBlueprint,getBlueprint,promptWritingErrors} from '@/lib/prompt-blueprint';
+import {promptFrameworks} from '@/data/prompt-frameworks';
+import {createFrameworkPrompt} from '@/lib/framework-authoring';
+it('31场景结构源与正式模板、模块和字段顺序一致',()=>{for(const s of builtin){const b=getBlueprint(s.slug)!;expect(b,s.slug).toBeTruthy();expect(compileBlueprint(b)).toBe(s.solutionContent);const source=JSON.parse(readFileSync('content/solutions/'+s.slug+'.json','utf8').replace(/^\uFEFF/,''));expect(source.solutionContent).toBe(compileBlueprint(b));expect(source.promptVariants??[]).toEqual(b.variants);expect(b.framework).toBe(promptFrameworks[s.slug].name);expect(b.modules.flatMap(m=>m.keys)).toEqual(s.variables.map(v=>v.key));for(const v of s.variables){expect(v.promptLabel).toBeTruthy();expect(v.promptLabel).not.toMatch(/[？?]/);}}});
+it('全部模板和交付分支没有问句前缀、连续标点或案例检查泄漏',()=>{for(const s of builtin)for(const text of [s.solutionContent,...(s.promptVariants??[]).map(v=>v.content)])expect(promptWritingErrors(text),s.slug).toEqual([]);});
+it('目标、任务、验收指标分别对应正确模块',()=>{for(const slug of ['communication-preparation','sales-follow-up']){const groups=promptFrameworks[slug].groups;expect(groups.find(g=>g.code==='O')!.keys).toEqual(['objective']);expect(groups.find(g=>g.code==='T')!.keys).toEqual(['task','output']);}expect(promptFrameworks['project-planning'].groups.find(g=>g.code==='K')!.keys).toContain('success');expect(promptFrameworks['xiaohongshu-topic-planning'].groups.find(g=>g.code==='I')!.keys).toContain('history');});
+it('作者不能把表单问句直接作为正式提示词标签',()=>{expect(()=>createFrameworkPrompt({name:'APE',reason:'简单任务',opening:'完成任务',fields:[{key:'a',label:'做什么？'},{key:'p',label:'目的'},{key:'e',label:'结果'}],bindings:{A:{keys:['a']},P:{keys:['p']},E:{keys:['e']}},output:'正文',rules:['按材料执行'],acceptance:['事实准确']})).toThrow('正式提示词标签');});
+it('检测器拒绝此前出现的回归格式',()=>{expect(promptWritingErrors('依次执行：检查。；交付。')).not.toEqual([]);expect(promptWritingErrors('需要什么结果？：正文')).not.toEqual([]);expect(promptWritingErrors('按上述交付结构提供具体可用内容，2×3000=6000')).not.toEqual([]);});

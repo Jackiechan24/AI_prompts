@@ -1,0 +1,6 @@
+import {it,expect} from 'vitest';
+import {validPersonalPrompts,mergePersonalPrompts,type PersonalPrompt} from '@/lib/personal-prompts';
+const prompt:PersonalPrompt={id:'p1',title:'会议整理',content:'请整理以下记录。\n保留原文 $& {{原始内容}}',category:'会议与沟通',createdAt:'2026-11-07T01:00:00Z',updatedAt:'2026-11-07T01:00:00Z',source:{slug:'meeting-notes-action-items',template:'任务：{{task}}',values:{task:'原始记录'}}};
+it('个人提示词独立于公开方案，可完整备份及恢复快照',()=>{const restored=JSON.parse(JSON.stringify([prompt]));expect(validPersonalPrompts(restored)).toBe(true);expect(restored[0].content).toBe(prompt.content);expect(restored[0].source).toEqual(prompt.source);});
+it('损坏、空白和重复ID不作为有效备份导入',()=>{for(const value of [null,{},[{}],[{...prompt,title:' '}],[{...prompt,content:''}],[{...prompt,updatedAt:'bad'}],[prompt,prompt],[{...prompt,source:{slug:'x',template:'t',values:{bad:{}}}}]])expect(validPersonalPrompts(value)).toBe(false);});
+it('导入同ID内容创建独立副本，不覆盖已有内容或来源',()=>{const merged=mergePersonalPrompts([prompt],[{...prompt,title:'导入版'}]);expect(merged).toHaveLength(2);expect(merged[0].id).not.toBe(prompt.id);expect(merged[1]).toEqual(prompt);expect(merged[0].source).toEqual(prompt.source);expect(validPersonalPrompts(merged)).toBe(true);});

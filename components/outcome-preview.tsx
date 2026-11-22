@@ -1,0 +1,3 @@
+'use client';
+export {OutcomePreview} from "./result-artwork";
+export function HeroPreview(){return <div className="journey-clean" aria-label="从需求到提示词的使用过程"><div className="journey-clean-heading"><span>从想法，到可执行的要求</span><h2>让 AI 理解你的任务</h2></div><ol><li><span className="journey-step">01</span><div><h3>选一个具体任务</h3><p>找到适合问题的解决方案，先看成果。</p></div></li><li><span className="journey-step">02</span><div><h3>按框架补齐需求</h3><p>明确目标、材料和规则，减少反复沟通。</p><div className="journey-chips"><span>目标</span><span>材料</span><span>规则</span></div></div></li><li><span className="journey-step">03</span><div><h3>复制完整提示词</h3><p>带上材料，交给你熟悉的 AI 工具。</p></div></li></ol><div className="journey-clean-note">一次说清楚，少一些试错。</div></div>}

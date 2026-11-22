@@ -1,0 +1,3 @@
+import {it,expect} from 'vitest';import {builtin} from '../lib/solutions';import {categories} from '../data/categories';import {search} from '../lib/search';
+it('八核心场景与具体任务归属合法',()=>{expect(categories).toHaveLength(8);for(const s of builtin)expect(categories.some(c=>c.name===s.domain&&c.scenes.includes(s.category))).toBe(true);});
+it('核心场景与具体任务取交集',()=>{expect(search(builtin,new URLSearchParams({domain:'数据与表格'}))).toHaveLength(4);expect(search(builtin,new URLSearchParams({domain:'数据与表格',category:'销售分析'})).map(s=>s.slug)).toEqual(['excel-sales-analysis']);expect(search(builtin,new URLSearchParams({domain:'会议与沟通',category:'销售分析'}))).toHaveLength(0);});

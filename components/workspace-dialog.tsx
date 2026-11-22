@@ -1,0 +1,4 @@
+ 'use client';
+import {useEffect,useId,useRef,type ReactNode} from 'react';
+import {createPortal} from 'react-dom';
+export function WorkspaceDialog({title,children,onClose,message,wide=false}:{title:string;children:ReactNode;onClose:()=>void;message?:string;wide?:boolean}){const ref=useRef<HTMLDialogElement>(null);const id=useId();useEffect(()=>{const dialog=ref.current;dialog?.showModal();return()=>{dialog?.close();};},[]);return createPortal(<dialog ref={ref} className={'workspace-dialog'+(wide?' workspace-dialog-wide':'')} aria-labelledby={id} onCancel={event=>{event.preventDefault();onClose();}}><header className="workspace-dialog-header"><h2 id={id}>{title}</h2><button type="button" onClick={onClose}>关闭</button></header><div className="workspace-dialog-content">{children}</div>{message&&<p className="workspace-dialog-message" role="status">{message}</p>}</dialog>,document.body)}

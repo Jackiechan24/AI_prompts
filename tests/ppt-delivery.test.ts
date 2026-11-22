@@ -1,0 +1,10 @@
+import {it,expect} from 'vitest';
+import {builtin} from '@/lib/solutions';
+import {render} from '@/lib/template';
+import {selectPrompt} from '@/lib/prompt';
+import {pptCaseValues} from '@/lib/case-values';
+const s=builtin.find(s=>s.slug==='business-report-ppt-outline')!;
+const base={task:'新人培训',objective:'掌握报销流程',materials:'已有制度说明',audience:'新人，现场讲解'};
+it('PPT交付三分支只生成适用要求',()=>{for(const mode of ['仅大纲','完整逐页策划','成品制作']){const values={...base,mode,file_specs:'独立HTML网页'};const p=selectPrompt(s,values),r=render(p.content,s.variables,values);expect(r.valid).toBe(true);expect(r.text).toContain('【目标】');expect(r.text).toContain('【受众与使用方式】');if(mode==='成品制作'){expect(r.text).toContain('独立HTML网页');expect(r.text).toContain('实际检查文件打开情况');expect(p.omitKeys).toEqual([]);}else{expect(r.text).not.toContain('独立HTML网页');expect(r.text).not.toContain('实际检查文件打开情况');expect(p.omitKeys).toContain('file_specs');}if(mode==='仅大纲')expect(r.text).not.toContain('正文内容：');}});
+it('PPT目标与交付范围必填，风格篇幅有默认且不覆盖用户要求',()=>{const p=selectPrompt(s,{...base,mode:'完整逐页策划'});expect(render(p.content,s.variables,{...base,mode:'完整逐页策划',objective:''}).errors.objective).toBeTruthy();const r=render(p.content,s.variables,{...base,mode:'完整逐页策划',length:'4页含封面',visual:'品牌紫色'});expect(r.text).toContain('4页含封面');expect(r.text).toContain('品牌紫色');expect(r.text).not.toContain('建议8页');expect(r.text).not.toContain('已有思路与内容约束：');});
+it('PPT案例同一模板生成逐页策划且不冒充已制作文件',()=>{const values=pptCaseValues(s.resultExample.caseStudy!);const p=selectPrompt(s,values);const r=render(p.content,s.variables,values);expect(r.valid).toBe(true);expect(r.text).toContain('完整逐页策划');expect(r.text).not.toContain('文件规格与可编辑要求');expect(r.text).toContain('S1');expect(r.text).not.toContain('{{');});

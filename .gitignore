@@ -1,0 +1,14 @@
+node_modules/
+.next/
+*.tsbuildinfo
+.env*
+
+*.log
+coverage/
+artifacts/
+releases/
+.DS_Store
+Thumbs.db
+miniprogram/*.pem
+*.key
+!.env.example

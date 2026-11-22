@@ -1,0 +1,36 @@
+import {frameworkLibrary} from './framework-library';
+export const frameworkMeanings:Record<string,Record<string,string>>=Object.fromEntries(Object.entries(frameworkLibrary).map(([name,f])=>[name,Object.fromEntries(f.modules.map(m=>[m.code,m.meaning]))]));
+export const frameworkTerms:Record<string,Record<string,string>>=Object.fromEntries(Object.entries(frameworkLibrary).map(([name,f])=>[name,Object.fromEntries(f.modules.map(m=>[m.code,m.term]))]));
+export const frameworkUsage:Record<string,string>={
+  "business-report-ppt-outline": "背景与来源 → 主要目标和关键问题 → 内容视觉风格 → 语气语言 → 受众与阅读方式 → 交付范围、篇幅及验收。",
+  "customer-review-analysis": "T 明确分析目标 → R 约定分类、统计和交付要求 → A 检查、分类、汇总与排序 → C 提供业务背景和评价原文 → E 提供一条分类参考。",
+  "excel-multi-sheet-merge": "R 明确数据处理职责 → I 提供源表和字段映射 → S 按追加或关联步骤处理 → E 指定目标表与核验结果 → N 约定去重、冲突和源文件保护规则。",
+  "excel-sales-analysis": "R 明确分析职责 → I 提供业务问题、数据和计算口径 → S 检查、计算、比较与追溯异常 → E 指定报告和验收要求 → N 限定数据与推断边界。",
+  "meeting-notes-action-items": "R 明确忠实整理记录的职责 → T 提供会议原文并指定要提取的决策、行动和待确认项 → F 指定纪要与行动表的格式。",
+  "xiaohongshu-topic-planning": "C/R 说明账号能力与策划职责 → I 提供目标用户、场景和素材 → S 明确内容目标 → P 指定表达特点 → E 探索多方向选题并去重排序。",
+  "speech-writing": "C 提供场合与材料 → O 明确发言目标 → S 选择讲述方式 → T 指定语气 → A 说明听众 → R 约定时长与稿件形式。",
+  "report-content-organization": "R 明确汇报内容编辑职责 → A 指定整理任务 → C 提供对象、周期和材料 → E 约定汇报形式与验收结果。",
+  "excel-data-cleaning": "角色 → 指令 → 步骤 → 最终目标 → 限制",
+  "data-chart-design": "指令 → 背景信息 → 输入数据 → 输出引导",
+  "document-drafting": "角色 → 行动 → 背景 → 预期",
+  "text-rewriting": "背景 → 行动 → 结果 → 示例",
+  "document-summary": "指令 → 背景信息 → 输入数据 → 输出引导",
+  "format-conversion": "指令 → 背景信息 → 输入数据 → 输出引导",
+  "action-item-extraction": "角色 → 任务 → 格式",
+  "email-reply": "背景 → 目标 → 风格 → 语气 → 受众 → 输出",
+  "communication-preparation": "上下文背景 → 目的 → 行动 → 场景 → 任务",
+  "content-writing": "背景 → 目标 → 风格 → 语气 → 受众 → 输出",
+  "marketing-copy": "背景 → 目标 → 风格 → 语气 → 受众 → 输出",
+  "event-planning": "角色 → 目的 → 场景 → 预期解决方案 → 步骤",
+  "customer-issue-triage": "任务 → 要求 → 行动 → 背景 → 示例",
+  "sales-follow-up": "上下文背景 → 目的 → 行动 → 场景 → 任务",
+  "proposal-quotation": "角色 → 目的 → 场景 → 预期解决方案 → 步骤",
+  "information-retrieval": "指令 → 背景信息 → 输入数据 → 输出引导",
+  "industry-research": "角色 → 指令 → 步骤 → 最终目标 → 限制",
+  "competitor-analysis": "角色 → 指令 → 步骤 → 最终目标 → 限制",
+  "project-planning": "背景 → 角色 → 目标 → 关键结果 → 试验与改进",
+  "file-archiving": "角色 → 输入 → 步骤 → 期望",
+  "batch-organization": "角色 → 指令 → 步骤 → 最终目标 → 限制",
+  "operation-guide": "角色 → 输入 → 步骤 → 期望",
+  "process-mapping": "角色 → 输入 → 步骤 → 期望"
+};

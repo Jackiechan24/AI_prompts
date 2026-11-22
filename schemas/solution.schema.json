@@ -1,0 +1,886 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Solution",
+  "type": "object",
+  "required": [
+    "id",
+    "slug",
+    "title",
+    "domain",
+    "category",
+    "problem",
+    "audience",
+    "difficulty",
+    "outcome",
+    "resultExample",
+    "requiredInputs",
+    "variables",
+    "deliveryTypes",
+    "solutionContent",
+    "instructions",
+    "acceptanceCriteria",
+    "boundaries",
+    "qualityStatus",
+    "tags",
+    "testedAt",
+    "testNotes",
+    "isDemo",
+    "validationRecords"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "slug": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "domain": {
+      "type": "string",
+      "minLength": 1
+    },
+    "category": {
+      "type": "string",
+      "minLength": 1
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 1
+    },
+    "problem": {
+      "type": "string",
+      "minLength": 1
+    },
+    "audience": {
+      "type": "string",
+      "minLength": 1
+    },
+    "difficulty": {
+      "enum": [
+        "新手",
+        "进阶",
+        "专业"
+      ]
+    },
+    "outcome": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 1
+    },
+    "resultExample": {
+      "type": "object",
+      "required": [
+        "label",
+        "description"
+      ],
+      "properties": {
+        "label": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "sampleOutput": {
+          "type": "string"
+        },
+        "image": {
+          "type": "string"
+        },
+        "caseStudy": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "background",
+            "inputs",
+            "sourceRows",
+            "materialNotes",
+            "review",
+            "slides",
+            "checks"
+          ],
+          "properties": {
+            "background": {
+              "type": "string",
+              "minLength": 1
+            },
+            "inputs": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "label",
+                  "value"
+                ],
+                "properties": {
+                  "label": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "value": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                }
+              }
+            },
+            "sourceRows": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "source",
+                  "channel",
+                  "target",
+                  "actual"
+                ],
+                "properties": {
+                  "source": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "channel": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "target": {
+                    "type": "number",
+                    "minimum": 0
+                  },
+                  "actual": {
+                    "type": "number",
+                    "minimum": 0
+                  }
+                }
+              }
+            },
+            "materialNotes": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "review": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "facts",
+                "gaps",
+                "confirmation"
+              ],
+              "properties": {
+                "facts": {
+                  "type": "array",
+                  "minItems": 1,
+                  "items": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "gaps": {
+                  "type": "array",
+                  "minItems": 1,
+                  "items": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "confirmation": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              }
+            },
+            "slides": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "page",
+                  "title",
+                  "purpose",
+                  "evidence",
+                  "visual",
+                  "notes",
+                  "seconds"
+                ],
+                "properties": {
+                  "page": {
+                    "type": "integer",
+                    "minimum": 1
+                  },
+                  "title": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "purpose": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "evidence": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "visual": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "notes": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "seconds": {
+                    "type": "integer",
+                    "minimum": 1
+                  }
+                }
+              }
+            },
+            "checks": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        },
+        "workedExample": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "title",
+            "background",
+            "metrics",
+            "inputHeaders",
+            "inputs",
+            "headers",
+            "rows",
+            "findings",
+            "checks",
+            "values",
+            "logic"
+          ],
+          "properties": {
+            "title": {
+              "type": "string",
+              "minLength": 1
+            },
+            "background": {
+              "type": "string",
+              "minLength": 1
+            },
+            "metrics": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              }
+            },
+            "inputHeaders": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "inputs": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              }
+            },
+            "headers": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "rows": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              }
+            },
+            "findings": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "checks": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "values": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "string"
+              },
+              "minProperties": 1
+            },
+            "logic": {
+              "type": "string",
+              "minLength": 1
+            },
+            "sections": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "title",
+                  "headers",
+                  "rows"
+                ],
+                "properties": {
+                  "title": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "headers": {
+                    "type": "array",
+                    "minItems": 1,
+                    "items": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  },
+                  "rows": {
+                    "type": "array",
+                    "minItems": 1,
+                    "items": {
+                      "type": "array",
+                      "minItems": 1,
+                      "items": {
+                        "type": "string",
+                        "minLength": 1
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "requiredInputs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 1
+    },
+    "variables": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "key",
+          "label",
+          "type",
+          "required"
+        ],
+        "properties": {
+          "key": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9_]*$"
+          },
+          "label": {
+            "type": "string"
+          },
+          "type": {
+            "enum": [
+              "text",
+              "textarea",
+              "select",
+              "multiselect",
+              "number",
+              "date"
+            ]
+          },
+          "required": {
+            "type": "boolean"
+          },
+          "placeholder": {
+            "type": "string"
+          },
+          "help": {
+            "type": "string"
+          },
+          "defaultValue": {
+            "type": [
+              "string",
+              "number",
+              "array"
+            ],
+            "items": {
+              "type": "string"
+            }
+          },
+          "options": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "emptyBehavior": {
+            "enum": [
+              "omitLine",
+              "omitParagraph"
+            ]
+          },
+          "min": {
+            "type": "number"
+          },
+          "max": {
+            "type": "number"
+          },
+          "step": {
+            "type": "number",
+            "exclusiveMinimum": 0
+          },
+          "requiredWhen": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "key",
+              "equals"
+            ],
+            "properties": {
+              "key": {
+                "type": "string"
+              },
+              "equals": {
+                "type": "string"
+              }
+            }
+          },
+          "outputDefault": {
+            "type": "string",
+            "minLength": 1
+          },
+          "promptLabel": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "additionalProperties": false,
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "required": {
+                  "const": false
+                }
+              }
+            },
+            "then": {
+              "required": [
+                "emptyBehavior"
+              ]
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "type": {
+                  "enum": [
+                    "select",
+                    "multiselect"
+                  ]
+                }
+              }
+            },
+            "then": {
+              "required": [
+                "options"
+              ],
+              "properties": {
+                "options": {
+                  "minItems": 1,
+                  "uniqueItems": true
+                }
+              }
+            }
+          }
+        ]
+      },
+      "minItems": 0
+    },
+    "deliveryTypes": {
+      "type": "array",
+      "items": {
+        "enum": [
+          "提示词",
+          "多阶段提示词",
+          "操作流程",
+          "模板",
+          "工具组合",
+          "检查清单"
+        ]
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "solutionContent": {
+      "type": "string",
+      "minLength": 1
+    },
+    "instructions": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 1
+    },
+    "acceptanceCriteria": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 1
+    },
+    "boundaries": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 1
+    },
+    "toolSuggestions": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 1
+    },
+    "qualityStatus": {
+      "enum": [
+        "draft",
+        "testing",
+        "verified",
+        "published",
+        "deprecated"
+      ]
+    },
+    "testedAt": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date"
+    },
+    "testNotes": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 1
+    },
+    "isDemo": {
+      "type": "boolean"
+    },
+    "stages": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "title",
+          "instructions",
+          "content"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1
+          },
+          "instructions": {
+            "type": "string",
+            "minLength": 1
+          },
+          "content": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "validationRecords": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "date",
+          "tool",
+          "inputSummary",
+          "caseType",
+          "result",
+          "notes",
+          "scores"
+        ],
+        "properties": {
+          "date": {
+            "type": "string",
+            "format": "date"
+          },
+          "tool": {
+            "type": "string",
+            "minLength": 1
+          },
+          "inputSummary": {
+            "type": "string",
+            "minLength": 1
+          },
+          "caseType": {
+            "enum": [
+              "normal",
+              "incomplete",
+              "abnormal",
+              "boundary"
+            ]
+          },
+          "result": {
+            "enum": [
+              "pass",
+              "fail"
+            ]
+          },
+          "notes": {
+            "type": "string",
+            "minLength": 1
+          },
+          "scores": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "accuracy",
+              "completeness",
+              "relevance",
+              "usability",
+              "stability"
+            ],
+            "properties": {
+              "accuracy": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 5
+              },
+              "completeness": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 5
+              },
+              "relevance": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 5
+              },
+              "usability": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 5
+              },
+              "stability": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 5
+              }
+            }
+          }
+        }
+      }
+    },
+    "cardSummary": {
+      "type": "string",
+      "minLength": 1
+    },
+    "capabilityTags": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "promptKeyPoints": {
+      "type": "string",
+      "minLength": 1
+    },
+    "taskType": {
+      "enum": [
+        "创作与生成",
+        "改写与转换",
+        "提取与整理",
+        "计算与分析",
+        "检索与研究",
+        "规划与策划",
+        "检查与评审",
+        "操作与执行"
+      ]
+    },
+    "relatedDomains": {
+      "type": "array",
+      "maxItems": 2,
+      "uniqueItems": true,
+      "items": {
+        "type": "string"
+      }
+    },
+    "secondaryTypes": {
+      "type": "array",
+      "maxItems": 2,
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "创作与生成",
+          "改写与转换",
+          "提取与整理",
+          "计算与分析",
+          "检索与研究",
+          "规划与策划",
+          "检查与评审",
+          "操作与执行"
+        ]
+      }
+    },
+    "promptVariants": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "key",
+          "equals",
+          "content"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "key": {
+            "type": "string",
+            "minLength": 1
+          },
+          "equals": {
+            "type": "string",
+            "minLength": 1
+          },
+          "content": {
+            "type": "string",
+            "minLength": 1
+          },
+          "omitKeys": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  },
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "deliveryTypes": {
+            "contains": {
+              "const": "多阶段提示词"
+            }
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "stages"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "qualityStatus": {
+            "enum": [
+              "verified",
+              "published"
+            ]
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "testedAt": {
+            "type": "string",
+            "format": "date"
+          },
+          "validationRecords": {
+            "minItems": 1
+          }
+        }
+      }
+    }
+  ]
+}

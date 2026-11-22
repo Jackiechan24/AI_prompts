@@ -1,0 +1,1418 @@
+{
+  "action-item-extraction": {
+    "framework": "RTF",
+    "reason": "行动提取是明确输入到固定字段的整理，RTF限定职责与格式，并区分承诺和讨论。",
+    "inputModules": [
+      {
+        "module": "R",
+        "fields": [],
+        "instructionProvided": true
+      },
+      {
+        "module": "T",
+        "fields": [
+          "task",
+          "materials"
+        ],
+        "instructionProvided": false
+      },
+      {
+        "module": "F",
+        "fields": [
+          "output"
+        ],
+        "instructionProvided": false
+      }
+    ],
+    "referenceScope": "完整内容参考及核验，非已执行工具操作或外部模型实测",
+    "deliverables": [
+      "主要结果",
+      "行动状态与未决事项"
+    ],
+    "evidenceStatus": "人工材料对照与结构检查；待真实模型测试",
+    "modelTested": false
+  },
+  "batch-organization": {
+    "framework": "RISEN",
+    "reason": "批量操作有覆盖和回退风险，RISEN先预演检查再在授权范围执行，明确日志和未执行项。",
+    "inputModules": [
+      {
+        "module": "R",
+        "fields": [],
+        "instructionProvided": true
+      },
+      {
+        "module": "I",
+        "fields": [
+          "task",
+          "materials",
+          "rules"
+        ],
+        "instructionProvided": false
+      },
+      {
+        "module": "S",
+        "fields": [],
+        "instructionProvided": true
+      },
+      {
+        "module": "E",
+        "fields": [
+          "output"
+        ],
+        "instructionProvided": false
+      },
+      {
+        "module": "N",
+        "fields": [
+          "limits"
+        ],
+        "instructionProvided": false
+      }
+    ],
+    "referenceScope": "完整内容参考及核验，非已执行工具操作或外部模型实测",
+    "deliverables": [
+      "主要结果",
+      "规则、日志与安全回退"
+    ],
+    "evidenceStatus": "人工材料对照与结构检查；待真实模型测试",
+    "modelTested": false
+  },
+  "business-report-ppt-outline": {
+    "framework": "CO-STAR",
+    "reason": "PPT内容取舍与页面表达必须同时适配目标、受众、风格、语气及交付范围，CO-STAR覆盖六项控制。",
+    "inputModules": [
+      {
+        "module": "C",
+        "fields": [
+          "task",
+          "materials",
+          "thinking"
+        ],
+        "instructionProvided": false
+      },
+      {
+        "module": "O",
+        "fields": [
+          "objective"
+        ],
+        "instructionProvided": false
+      },
+      {
+        "module": "S",
+        "fields": [
+          "visual"
+        ],
+        "instructionProvided": false
+      },
+      {
+        "module": "T",
+        "fields": [
+          "tone"
+        ],
+        "instructionProvided": false
+      },
+      {
+        "module": "A",
+        "fields": [
+          "audience"
+        ],
+        "instructionProvided": false
+      },
+      {
+        "module": "R",
+        "fields": [
+          "mode",
+          "length",
+          "delivery",
+          "file_specs"
+        ],
+        "instructionProvided": false
+      }
+    ],
+    "referenceScope": "完整逐页策划与网页呈现参考，非已生成独立文件",
+    "deliverables": [
+      "逐页正文、材料依据、呈现方案、讲述备注",
+      "事实与缺口核对"
+    ],
+    "evidenceStatus": "人工材料对照与结构检查；待真实模型测试",
+    "modelTested": false
+  },
+  "communication-preparation": {
+    "framework": "COAST",
+    "reason": "沟通依赖对象关系与现场情境，COAST把目标、行动、情境和交付分开，避免猜对方立场。",
+    "inputModules": [
+      {
+        "module": "C",
+        "fields": [
+          "materials"
+        ],
+        "instructionProvided": false
+      },
+      {
+        "module": "O",
+        "fields": [
+          "objective"
+        ],
+        "instructionProvided": false
+      },
+      {
+        "module": "A",
+        "fields": [],
+        "instructionProvided": true
+      },
+      {
+        "module": "S",
+        "fields": [
+          "context"
+        ],
+        "instructionProvided": false
+      },
+      {
+        "module": "T",
+        "fields": [
+          "task",
+          "output"
+        ],
+        "instructionProvided": false
+      }
+    ],
+    "referenceScope": "完整内容参考及核验，非已执行工具操作或外部模型实测",
+    "deliverables": [
+      "主要结果",
+      "目标、证据与应对分支"
+    ],
+    "evidenceStatus": "人工材料对照与结构检查；待真实模型测试",
+    "modelTested": false
+  },
+  "competitor-analysis": {
+    "framework": "RISEN",
+    "reason": "竞品需统一版本时间和维度后比较，RISEN让证据检查、对比、建议与未知边界逐步执行。",
+    "inputModules": [
+      {
+        "module": "R",
+        "fields": [],
+        "instructionProvided": true
+      },
+      {
+        "module": "I",
+        "fields": [
+          "task",
+          "materials",
+          "rules"
+        ],
+        "instructionProvided": false
+      },
+      {
+        "module": "S",
+        "fields": [],
+        "instructionProvided": true
+      },
+      {
+        "module": "E",
+        "fields": [
+          "output"
+        ],
+        "instructionProvided": false
+      },
+      {
+        "module": "N",
+        "fields": [
+          "limits"
+        ],
+        "instructionProvided": false
+      }
+    ],
+    "referenceScope": "完整内容参考及核验，非已执行工具操作或外部模型实测",
+    "deliverables": [
+      "主要结果",
+      "选型条件、来源与验证"
+    ],
+    "evidenceStatus": "人工材料对照与结构检查；待真实模型测试",
+    "modelTested": false
+  },
+  "content-writing": {
+    "framework": "CO-STAR",
+    "reason": "内容创作要让主题素材、读者目标和表达方式一致，CO-STAR可将任务与目标分开，避免只有文章没有读者行动。",
+    "inputModules": [
+      {
+        "module": "C",
+        "fields": [
+          "task",
+          "materials"
+        ],
+        "instructionProvided": false
+      },
+      {
+        "module": "O",
+        "fields": [
+          "objective"
+        ],
+        "instructionProvided": false
+      },
+      {
+        "module": "S",
+        "fields": [
+          "style"
+        ],
+        "instructionProvided": false
+      },
+      {
+        "module": "T",
+        "fields": [
+          "tone"
+        ],
+        "instructionProvided": false
+      },
+      {
+        "module": "A",
+        "fields": [
+          "audience"
+        ],
+        "instructionProvided": false
+      },
+      {
+        "module": "R",
+        "fields": [
+          "output"
+        ],
+        "instructionProvided": false
+      }
+    ],
+    "referenceScope": "完整内容参考及核验，非已执行工具操作或外部模型实测",
+    "deliverables": [
+      "主要结果",
+      "目标回应与素材核对"
+    ],
+    "evidenceStatus": "人工材料对照与结构检查；待真实模型测试",
+    "modelTested": false
+  },
+  "customer-issue-triage": {
+    "framework": "TRACE",
+    "reason": "客户问题整理要统一分类优先级与解决状态，并可追溯原话；TRACE的请求、动作和示例防止把已回复当已解决。",
+    "inputModules": [
+      {
+        "module": "T",
+        "fields": [
+          "task"
+        ],
+        "instructionProvided": false
+      },
+      {
+        "module": "R",
+        "fields": [
+          "rules",
+          "output"
+        ],
+        "instructionProvided": false
+      },
+      {
+        "module": "A",
+        "fields": [],
+        "instructionProvided": true
+      },
+      {
+        "module": "C",
+        "fields": [
+          "materials"
+        ],
+        "instructionProvided": false
+      },
+      {
+        "module": "E",
+        "fields": [
+          "reference"
+        ],
+        "instructionProvided": false
+      }
+    ],
+    "referenceScope": "完整内容参考及核验，非已执行工具操作或外部模型实测",
+    "deliverables": [
+      "主要结果",
+      "归类口径与跟进依据"
+    ],
+    "evidenceStatus": "人工材料对照与结构检查；待真实模型测试",
+    "modelTested": false
+  },
+  "customer-review-analysis": {
+    "framework": "TRACE",
+    "reason": "评价需要任务、分类统计要求、处理动作、原文背景和标注样例共同约束，TRACE可逐条核对判断标准与依据。",
+    "inputModules": [
+      {
+        "module": "T",
+        "fields": [
+          "business"
+        ],
+        "instructionProvided": false
+      },
+      {
+        "module": "R",
+        "fields": [
+          "taxonomy",
+          "priority",
+          "deliverable"
+        ],
+        "instructionProvided": false
+      },
+      {
+        "module": "A",
+        "fields": [],
+        "instructionProvided": true
+      },
+      {
+        "module": "C",
+        "fields": [
+          "reviews",
+          "privacy"
+        ],
+        "instructionProvided": false
+      },
+      {
+        "module": "E",
+        "fields": [
+          "example"
+        ],
+        "instructionProvided": true
+      }
+    ],
+    "referenceScope": "完整内容参考及核验，非已执行工具操作或外部模型实测",
+    "deliverables": [
+      "主要结果",
+      "分类统计与样本边界"
+    ],
+    "evidenceStatus": "人工材料对照与结构检查；待真实模型测试",
+    "modelTested": false
+  },
+  "data-chart-design": {
+    "framework": "ICIO",
+    "reason": "图表任务要从输入数据与用途选择输出形式，ICIO区分指令、背景、数据与图形要求，必要绘图步骤补入处理规则。",
+    "inputModules": [
+      {
+        "module": "I",
+        "fields": [
+          "task"
+        ],
+        "instructionProvided": false
+      },
+      {
+        "module": "C",
+        "fields": [
+          "context"
+        ],
+        "instructionProvided": false
+      },
+      {
+        "module": "ID",
+        "fields": [
+          "materials"
+        ],
+        "instructionProvided": false
+      },
+      {
+        "module": "O",
+        "fields": [
+          "output"
+        ],
+        "instructionProvided": false
+      }
+    ],
+    "referenceScope": "完整内容参考及核验，非已执行工具操作或外部模型实测",
+    "deliverables": [
+      "主要结果",
+      "图表方案与解读"
+    ],
+    "evidenceStatus": "人工材料对照与结构检查；待真实模型测试",
+    "modelTested": false
+  },
+  "document-drafting": {
+    "framework": "RACE",
+    "reason": "工作文档以用途、背景和明确交付为核心，RACE控制职责、正文任务与预期，不必增加创意实验。",
+    "inputModules": [
+      {
+        "module": "R",
+        "fields": [],
+        "instructionProvided": true
+      },
+      {
+        "module": "A",
+        "fields": [
+          "task"
+        ],
+        "instructionProvided": false
+      },
+      {
+        "module": "C",
+        "fields": [
+          "materials",
+          "context"
+        ],
+        "instructionProvided": false
+      },
+      {
+        "module": "E",
+        "fields": [
+          "output"
+        ],
+        "instructionProvided": false
+      }
+    ],
+    "referenceScope": "完整内容参考及核验，非已执行工具操作或外部模型实测",
+    "deliverables": [
+      "主要结果",
+      "要求核对与待补信息"
+    ],
+    "evidenceStatus": "人工材料对照与结构检查；待真实模型测试",
+    "modelTested": false
+  },
+  "document-summary": {
+    "framework": "ICIO",
+    "reason": "摘要必须保持原文信息边界，ICIO直接连接任务背景、原文与摘要输出，防止把生成当提取。",
+    "inputModules": [
+      {
+        "module": "I",
+        "fields": [
+          "task"
+        ],
+        "instructionProvided": false
+      },
+      {
+        "module": "C",
+        "fields": [
+          "context"
+        ],
+        "instructionProvided": false
+      },
+      {
+        "module": "ID",
+        "fields": [
+          "materials"
+        ],
+        "instructionProvided": false
+      },
+      {
+        "module": "O",
+        "fields": [
+          "output"
+        ],
+        "instructionProvided": false
+      }
+    ],
+    "referenceScope": "完整内容参考及核验，非已执行工具操作或外部模型实测",
+    "deliverables": [
+      "主要结果",
+      "摘要依据与限制"
+    ],
+    "evidenceStatus": "人工材料对照与结构检查；待真实模型测试",
+    "modelTested": false
+  },
+  "email-reply": {
+    "framework": "CO-STAR",
+    "reason": "邮件要同时回答收件人问题、达成沟通目标并约束语气与承诺，CO-STAR适合对象和表达敏感的拟稿。",
+    "inputModules": [
+      {
+        "module": "C",
+        "fields": [
+          "task",
+          "materials"
+        ],
+        "instructionProvided": false
+      },
+      {
+        "module": "O",
+        "fields": [
+          "objective"
+        ],
+        "instructionProvided": false
+      },
+      {
+        "module": "S",
+        "fields": [
+          "style"
+        ],
+        "instructionProvided": false
+      },
+      {
+        "module": "T",
+        "fields": [
+          "tone"
+        ],
+        "instructionProvided": false
+      },
+      {
+        "module": "A",
+        "fields": [
+          "audience"
+        ],
+        "instructionProvided": false
+      },
+      {
+        "module": "R",
+        "fields": [
+          "output"
+        ],
+        "instructionProvided": false
+      }
+    ],
+    "referenceScope": "完整内容参考及核验，非已执行工具操作或外部模型实测",
+    "deliverables": [
+      "主要结果",
+      "逐问回应与承诺边界"
+    ],
+    "evidenceStatus": "人工材料对照与结构检查；待真实模型测试",
+    "modelTested": false
+  },
+  "event-planning": {
+    "framework": "ROSES",
+    "reason": "活动从目标和资源情境形成解决方案及执行步骤，ROSES能够承载时间预算、责任依赖与验收。",
+    "inputModules": [
+      {
+        "module": "R",
+        "fields": [],
+        "instructionProvided": true
+      },
+      {
+        "module": "O",
+        "fields": [
+          "objective"
+        ],
+        "instructionProvided": false
+      },
+      {
+        "module": "S",
+        "fields": [
+          "task",
+          "materials",
+          "context"
+        ],
+        "instructionProvided": false
+      },
+      {
+        "module": "E",
+        "fields": [
+          "output"
+        ],
+        "instructionProvided": false
+      },
+      {
+        "module": "S2",
+        "fields": [],
+        "instructionProvided": true
+      }
+    ],
+    "referenceScope": "完整内容参考及核验，非已执行工具操作或外部模型实测",
+    "deliverables": [
+      "主要结果",
+      "执行、责任与依赖",
+      "预算、风险与验收"
+    ],
+    "evidenceStatus": "人工材料对照与结构检查；待真实模型测试",
+    "modelTested": false
+  },
+  "excel-data-cleaning": {
+    "framework": "RISEN",
+    "reason": "清洗涉及字段规则、变更、异常与保留源行，RISEN把输入指令、执行顺序和禁止猜补明确分开。",
+    "inputModules": [
+      {
+        "module": "R",
+        "fields": [],
+        "instructionProvided": true
+      },
+      {
+        "module": "I",
+        "fields": [
+          "task",
+          "materials",
+          "rules"
+        ],
+        "instructionProvided": false
+      },
+      {
+        "module": "S",
+        "fields": [],
+        "instructionProvided": true
+      },
+      {
+        "module": "E",
+        "fields": [
+          "output"
+        ],
+        "instructionProvided": false
+      },
+      {
+        "module": "N",
+        "fields": [
+          "limits"
+        ],
+        "instructionProvided": false
+      }
+    ],
+    "referenceScope": "完整内容参考及核验，非已执行工具操作或外部模型实测",
+    "deliverables": [
+      "主要结果",
+      "字段规则与变更日志",
+      "异常、排除与核验"
+    ],
+    "evidenceStatus": "人工材料对照与结构检查；待真实模型测试",
+    "modelTested": false
+  },
+  "excel-multi-sheet-merge": {
+    "framework": "RISEN",
+    "reason": "合并是带条件分支、字段口径和源文件风险的处理任务，RISEN明确职责、步骤、目标表和不可执行边界。",
+    "inputModules": [
+      {
+        "module": "R",
+        "fields": [],
+        "instructionProvided": true
+      },
+      {
+        "module": "I",
+        "fields": [
+          "files",
+          "mapping"
+        ],
+        "instructionProvided": false
+      },
+      {
+        "module": "S",
+        "fields": [
+          "mode",
+          "join_key",
+          "duplicates"
+        ],
+        "instructionProvided": true
+      },
+      {
+        "module": "E",
+        "fields": [
+          "deliverable"
+        ],
+        "instructionProvided": false
+      },
+      {
+        "module": "N",
+        "fields": [],
+        "instructionProvided": true
+      }
+    ],
+    "referenceScope": "完整内容参考及核验，非已执行工具操作或外部模型实测",
+    "deliverables": [
+      "主要结果",
+      "字段映射与核验明细"
+    ],
+    "evidenceStatus": "人工材料对照与结构检查；待真实模型测试",
+    "modelTested": false
+  },
+  "excel-sales-analysis": {
+    "framework": "RISEN",
+    "reason": "销售分析须先确认口径再计算对账，RISEN用步骤与限制防止缺成本算利润、缺上期算增长。",
+    "inputModules": [
+      {
+        "module": "R",
+        "fields": [],
+        "instructionProvided": true
+      },
+      {
+        "module": "I",
+        "fields": [
+          "period",
+          "dataset",
+          "accounting"
+        ],
+        "instructionProvided": false
+      },
+      {
+        "module": "S",
+        "fields": [
+          "dimensions"
+        ],
+        "instructionProvided": true
+      },
+      {
+        "module": "E",
+        "fields": [
+          "report"
+        ],
+        "instructionProvided": false
+      },
+      {
+        "module": "N",
+        "fields": [
+          "limits"
+        ],
+        "instructionProvided": true
+      }
+    ],
+    "referenceScope": "完整内容参考及核验，非已执行工具操作或外部模型实测",
+    "deliverables": [
+      "主要结果",
+      "公式、异常与建议依据"
+    ],
+    "evidenceStatus": "人工材料对照与结构检查；待真实模型测试",
+    "modelTested": false
+  },
+  "file-archiving": {
+    "framework": "RISE",
+    "reason": "归档需要先盘点文件输入，再给分类路径与执行顺序，RISE适合流程型交付，授权和回退规则作为必要边界。",
+    "inputModules": [
+      {
+        "module": "R",
+        "fields": [],
+        "instructionProvided": true
+      },
+      {
+        "module": "I",
+        "fields": [
+          "task",
+          "materials",
+          "context"
+        ],
+        "instructionProvided": false
+      },
+      {
+        "module": "S",
+        "fields": [],
+        "instructionProvided": true
+      },
+      {
+        "module": "E",
+        "fields": [
+          "output"
+        ],
+        "instructionProvided": false
+      }
+    ],
+    "referenceScope": "完整内容参考及核验，非已执行工具操作或外部模型实测",
+    "deliverables": [
+      "主要结果",
+      "命名规则、冲突与回退"
+    ],
+    "evidenceStatus": "人工材料对照与结构检查；待真实模型测试",
+    "modelTested": false
+  },
+  "format-conversion": {
+    "framework": "ICIO",
+    "reason": "格式转换以源内容到目标结构的精确映射为主，ICIO明确输入数据、类型、缺失值与输出语法。",
+    "inputModules": [
+      {
+        "module": "I",
+        "fields": [
+          "task"
+        ],
+        "instructionProvided": false
+      },
+      {
+        "module": "C",
+        "fields": [
+          "context"
+        ],
+        "instructionProvided": false
+      },
+      {
+        "module": "ID",
+        "fields": [
+          "materials"
+        ],
+        "instructionProvided": false
+      },
+      {
+        "module": "O",
+        "fields": [
+          "output"
+        ],
+        "instructionProvided": false
+      }
+    ],
+    "referenceScope": "完整内容参考及核验，非已执行工具操作或外部模型实测",
+    "deliverables": [
+      "主要结果",
+      "字段映射与类型规则",
+      "转换核验"
+    ],
+    "evidenceStatus": "人工材料对照与结构检查；待真实模型测试",
+    "modelTested": false
+  },
+  "industry-research": {
+    "framework": "RISEN",
+    "reason": "研究依赖范围、来源、比对与结论限制，RISEN适合分步证据分析；当前小样本案例只证明边界处理，不证明全行业结论。",
+    "inputModules": [
+      {
+        "module": "R",
+        "fields": [],
+        "instructionProvided": true
+      },
+      {
+        "module": "I",
+        "fields": [
+          "task",
+          "materials",
+          "rules"
+        ],
+        "instructionProvided": false
+      },
+      {
+        "module": "S",
+        "fields": [],
+        "instructionProvided": true
+      },
+      {
+        "module": "E",
+        "fields": [
+          "output"
+        ],
+        "instructionProvided": false
+      },
+      {
+        "module": "N",
+        "fields": [
+          "limits"
+        ],
+        "instructionProvided": false
+      }
+    ],
+    "referenceScope": "完整内容参考及核验，非已执行工具操作或外部模型实测",
+    "deliverables": [
+      "主要结果",
+      "研究范围、证据等级与后续验证"
+    ],
+    "evidenceStatus": "人工材料对照与结构检查；待真实模型测试",
+    "modelTested": false
+  },
+  "information-retrieval": {
+    "framework": "ICIO",
+    "reason": "检索需要问题指令、范围背景、可用材料与来源输出，ICIO能明确查到、未查到和不能联网的范围。",
+    "inputModules": [
+      {
+        "module": "I",
+        "fields": [
+          "task"
+        ],
+        "instructionProvided": false
+      },
+      {
+        "module": "C",
+        "fields": [
+          "context"
+        ],
+        "instructionProvided": false
+      },
+      {
+        "module": "ID",
+        "fields": [
+          "materials"
+        ],
+        "instructionProvided": false
+      },
+      {
+        "module": "O",
+        "fields": [
+          "output"
+        ],
+        "instructionProvided": false
+      }
+    ],
+    "referenceScope": "完整内容参考及核验，非已执行工具操作或外部模型实测",
+    "deliverables": [
+      "主要结果",
+      "来源范围与缺口"
+    ],
+    "evidenceStatus": "人工材料对照与结构检查；待真实模型测试",
+    "modelTested": false
+  },
+  "marketing-copy": {
+    "framework": "CO-STAR",
+    "reason": "营销文案必须以产品证据支撑受众利益与行动目标，CO-STAR控制渠道、风格、语气和交付，避免参数堆砌。",
+    "inputModules": [
+      {
+        "module": "C",
+        "fields": [
+          "task",
+          "materials"
+        ],
+        "instructionProvided": false
+      },
+      {
+        "module": "O",
+        "fields": [
+          "objective"
+        ],
+        "instructionProvided": false
+      },
+      {
+        "module": "S",
+        "fields": [
+          "style"
+        ],
+        "instructionProvided": false
+      },
+      {
+        "module": "T",
+        "fields": [
+          "tone"
+        ],
+        "instructionProvided": false
+      },
+      {
+        "module": "A",
+        "fields": [
+          "audience"
+        ],
+        "instructionProvided": false
+      },
+      {
+        "module": "R",
+        "fields": [
+          "output"
+        ],
+        "instructionProvided": false
+      }
+    ],
+    "referenceScope": "完整内容参考及核验，非已执行工具操作或外部模型实测",
+    "deliverables": [
+      "主要结果",
+      "卖点、行动提示与证据"
+    ],
+    "evidenceStatus": "人工材料对照与结构检查；待真实模型测试",
+    "modelTested": false
+  },
+  "meeting-notes-action-items": {
+    "framework": "RTF",
+    "reason": "任务核心是忠实提取并按格式整理，RTF足够；无需额外创意或多轮策划，原文证据规则补入任务。",
+    "inputModules": [
+      {
+        "module": "R",
+        "fields": [],
+        "instructionProvided": true
+      },
+      {
+        "module": "T",
+        "fields": [
+          "meeting",
+          "transcript",
+          "participants",
+          "extract",
+          "focus"
+        ],
+        "instructionProvided": false
+      },
+      {
+        "module": "F",
+        "fields": [
+          "format"
+        ],
+        "instructionProvided": false
+      }
+    ],
+    "referenceScope": "完整内容参考及核验，非已执行工具操作或外部模型实测",
+    "deliverables": [
+      "主要结果",
+      "决策、状态与待确认"
+    ],
+    "evidenceStatus": "人工材料对照与结构检查；待真实模型测试",
+    "modelTested": false
+  },
+  "operation-guide": {
+    "framework": "RISE",
+    "reason": "操作指南围绕前置输入、按序步骤和结果判断，RISE避免遗漏权限与异常处理。",
+    "inputModules": [
+      {
+        "module": "R",
+        "fields": [],
+        "instructionProvided": true
+      },
+      {
+        "module": "I",
+        "fields": [
+          "task",
+          "materials",
+          "context"
+        ],
+        "instructionProvided": false
+      },
+      {
+        "module": "S",
+        "fields": [],
+        "instructionProvided": true
+      },
+      {
+        "module": "E",
+        "fields": [
+          "output"
+        ],
+        "instructionProvided": false
+      }
+    ],
+    "referenceScope": "完整内容参考及核验，非已执行工具操作或外部模型实测",
+    "deliverables": [
+      "主要结果",
+      "适用范围、异常与依据"
+    ],
+    "evidenceStatus": "人工材料对照与结构检查；待真实模型测试",
+    "modelTested": false
+  },
+  "process-mapping": {
+    "framework": "RISE",
+    "reason": "流程梳理按输入、节点步骤与终点产出组织，RISE明确角色、分支和异常，不把建议写成现行制度。",
+    "inputModules": [
+      {
+        "module": "R",
+        "fields": [],
+        "instructionProvided": true
+      },
+      {
+        "module": "I",
+        "fields": [
+          "task",
+          "materials",
+          "context"
+        ],
+        "instructionProvided": false
+      },
+      {
+        "module": "S",
+        "fields": [],
+        "instructionProvided": true
+      },
+      {
+        "module": "E",
+        "fields": [
+          "output"
+        ],
+        "instructionProvided": false
+      }
+    ],
+    "referenceScope": "完整内容参考及核验，非已执行工具操作或外部模型实测",
+    "deliverables": [
+      "主要结果",
+      "起止、分支与待确认项"
+    ],
+    "evidenceStatus": "人工材料对照与结构检查；待真实模型测试",
+    "modelTested": false
+  },
+  "project-planning": {
+    "framework": "BROKE",
+    "reason": "项目计划要把目标转为可验收关键结果，并根据实际反馈改进，BROKE明确首版与迭代，不伪造已完成效果。",
+    "inputModules": [
+      {
+        "module": "B",
+        "fields": [
+          "materials",
+          "context"
+        ],
+        "instructionProvided": false
+      },
+      {
+        "module": "R",
+        "fields": [],
+        "instructionProvided": true
+      },
+      {
+        "module": "O",
+        "fields": [
+          "task"
+        ],
+        "instructionProvided": false
+      },
+      {
+        "module": "K",
+        "fields": [
+          "success",
+          "output"
+        ],
+        "instructionProvided": false
+      },
+      {
+        "module": "E",
+        "fields": [
+          "feedback"
+        ],
+        "instructionProvided": false
+      }
+    ],
+    "referenceScope": "完整内容参考及核验，非已执行工具操作或外部模型实测",
+    "deliverables": [
+      "主要结果",
+      "资源、风险、验收与迭代"
+    ],
+    "evidenceStatus": "人工材料对照与结构检查；待真实模型测试",
+    "modelTested": false
+  },
+  "proposal-quotation": {
+    "framework": "ROSES",
+    "reason": "方案报价需先限定需求情境，再交付范围与价格方案，ROSES的步骤加入数量金额核验与审批边界；不是自动生成正式报价。",
+    "inputModules": [
+      {
+        "module": "R",
+        "fields": [],
+        "instructionProvided": true
+      },
+      {
+        "module": "O",
+        "fields": [
+          "objective"
+        ],
+        "instructionProvided": false
+      },
+      {
+        "module": "S",
+        "fields": [
+          "task",
+          "materials",
+          "context"
+        ],
+        "instructionProvided": false
+      },
+      {
+        "module": "E",
+        "fields": [
+          "output"
+        ],
+        "instructionProvided": false
+      },
+      {
+        "module": "S2",
+        "fields": [],
+        "instructionProvided": true
+      }
+    ],
+    "referenceScope": "完整内容参考及核验，非已执行工具操作或外部模型实测",
+    "deliverables": [
+      "主要结果",
+      "范围、商务条件与核验"
+    ],
+    "evidenceStatus": "人工材料对照与结构检查；待真实模型测试",
+    "modelTested": false
+  },
+  "report-content-organization": {
+    "framework": "RACE",
+    "reason": "汇报整理需要编辑职责、重点任务、业务背景与交付预期，RACE保持简单；复杂材料在行动部分补比较步骤。",
+    "inputModules": [
+      {
+        "module": "R",
+        "fields": [],
+        "instructionProvided": true
+      },
+      {
+        "module": "A",
+        "fields": [
+          "action",
+          "focus"
+        ],
+        "instructionProvided": false
+      },
+      {
+        "module": "C",
+        "fields": [
+          "context"
+        ],
+        "instructionProvided": false
+      },
+      {
+        "module": "E",
+        "fields": [
+          "expectation"
+        ],
+        "instructionProvided": false
+      }
+    ],
+    "referenceScope": "完整内容参考及核验，非已执行工具操作或外部模型实测",
+    "deliverables": [
+      "主要结果",
+      "证据与未决事项"
+    ],
+    "evidenceStatus": "人工材料对照与结构检查；待真实模型测试",
+    "modelTested": false
+  },
+  "sales-follow-up": {
+    "framework": "COAST",
+    "reason": "跟进须依据客户阶段和业务权限安排下一步，COAST强调具体情境与行动而非泛化销售话术。",
+    "inputModules": [
+      {
+        "module": "C",
+        "fields": [
+          "materials"
+        ],
+        "instructionProvided": false
+      },
+      {
+        "module": "O",
+        "fields": [
+          "objective"
+        ],
+        "instructionProvided": false
+      },
+      {
+        "module": "A",
+        "fields": [],
+        "instructionProvided": true
+      },
+      {
+        "module": "S",
+        "fields": [
+          "context"
+        ],
+        "instructionProvided": false
+      },
+      {
+        "module": "T",
+        "fields": [
+          "task",
+          "output"
+        ],
+        "instructionProvided": false
+      }
+    ],
+    "referenceScope": "完整内容参考及核验，非已执行工具操作或外部模型实测",
+    "deliverables": [
+      "主要结果",
+      "沟通话术与确认项"
+    ],
+    "evidenceStatus": "人工材料对照与结构检查；待真实模型测试",
+    "modelTested": false
+  },
+  "speech-writing": {
+    "framework": "CO-STAR",
+    "reason": "演讲稿需要目标、听众、场合与口语表达共同决定内容，CO-STAR可区分风格、语气和稿件交付。",
+    "inputModules": [
+      {
+        "module": "C",
+        "fields": [
+          "context"
+        ],
+        "instructionProvided": false
+      },
+      {
+        "module": "O",
+        "fields": [
+          "objective"
+        ],
+        "instructionProvided": false
+      },
+      {
+        "module": "S",
+        "fields": [
+          "style"
+        ],
+        "instructionProvided": true
+      },
+      {
+        "module": "T",
+        "fields": [
+          "tone"
+        ],
+        "instructionProvided": true
+      },
+      {
+        "module": "A",
+        "fields": [
+          "audience"
+        ],
+        "instructionProvided": false
+      },
+      {
+        "module": "R",
+        "fields": [
+          "mode",
+          "delivery"
+        ],
+        "instructionProvided": false
+      }
+    ],
+    "referenceScope": "完整内容参考及核验，非已执行工具操作或外部模型实测",
+    "deliverables": [
+      "主要结果",
+      "核心信息与试讲校准"
+    ],
+    "evidenceStatus": "人工材料对照与结构检查；待真实模型测试",
+    "modelTested": false
+  },
+  "text-rewriting": {
+    "framework": "CARE",
+    "reason": "改写要结合原文背景、动作、目标结果与风格样例，CARE防止仿写时把样例事实混入原文。",
+    "inputModules": [
+      {
+        "module": "C",
+        "fields": [
+          "task",
+          "materials"
+        ],
+        "instructionProvided": false
+      },
+      {
+        "module": "A",
+        "fields": [],
+        "instructionProvided": true
+      },
+      {
+        "module": "R",
+        "fields": [
+          "output"
+        ],
+        "instructionProvided": false
+      },
+      {
+        "module": "E",
+        "fields": [
+          "reference"
+        ],
+        "instructionProvided": false
+      }
+    ],
+    "referenceScope": "完整内容参考及核验，非已执行工具操作或外部模型实测",
+    "deliverables": [
+      "主要结果",
+      "事实保留与改动对照"
+    ],
+    "evidenceStatus": "人工材料对照与结构检查；待真实模型测试",
+    "modelTested": false
+  },
+  "xiaohongshu-topic-planning": {
+    "framework": "CRISPE",
+    "reason": "选题需要能力职责、用户洞察、内容目标、表达特点和多方向筛选，CRISPE适合探索而非只输出标题。",
+    "inputModules": [
+      {
+        "module": "C/R",
+        "fields": [
+          "positioning"
+        ],
+        "instructionProvided": true
+      },
+      {
+        "module": "I",
+        "fields": [
+          "users",
+          "assets",
+          "history"
+        ],
+        "instructionProvided": false
+      },
+      {
+        "module": "S",
+        "fields": [
+          "goal"
+        ],
+        "instructionProvided": false
+      },
+      {
+        "module": "P",
+        "fields": [
+          "personality"
+        ],
+        "instructionProvided": true
+      },
+      {
+        "module": "E",
+        "fields": [
+          "planning"
+        ],
+        "instructionProvided": true
+      }
+    ],
+    "referenceScope": "完整内容参考及核验，非已执行工具操作或外部模型实测",
+    "deliverables": [
+      "主要结果",
+      "探索、筛选与制作安排"
+    ],
+    "evidenceStatus": "人工材料对照与结构检查；待真实模型测试",
+    "modelTested": false
+  }
+}
